@@ -1,0 +1,33 @@
+{
+  "name": "living-scarecrow",
+  "productName": "Living Scarecrow",
+  "version": "0.2.0",
+  "description": "Living Scarecrow - Beta 0.2",
+  "main": "main.js",
+  "author": "Tu nombre",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.tuusuario.livingscarecrow",
+    "productName": "Living Scarecrow",
+    "files": ["main.js", "index.html", "package.json"],
+    "win": {
+      "target": [
+        { "target": "portable", "arch": ["x64"] },
+        { "target": "nsis", "arch": ["x64"] }
+      ]
+    },
+    "portable": { "artifactName": "LivingScarecrow-portable.exe" },
+    "nsis": {
+      "artifactName": "LivingScarecrow-Setup.exe",
+      "oneClick": true
+    }
+  }
+}
